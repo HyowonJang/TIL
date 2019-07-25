@@ -36,6 +36,8 @@
    - HTML5의 인라인 요소 종류
      > a, abbr, acronym, b, bdo, big, br, button, cite, code, dfn, em, i, img, input, kbd, label, map, object, q, samp, small, script, select, span, strong, sub, sup, textarea, tt, var
 
+<hr>
+
 ### 목록
 
 - `<ul>` : 순서가 필요하지 않은 목록(an unordered list)
