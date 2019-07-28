@@ -8,7 +8,7 @@
 - [목록](#목록) : `<ul>, <ol>, <li>`
 - [강조](#강조) : `<strong>`, `<em>`
 - [링크](#링크) : `<a>`
-- [이미지](#이미지) : `<imag>`
+- [이미지](#이미지) : `<img>`
 - [테이블](#테이블) : `<table>, <thead>, <tbody>, <tr>, <th>, <td>`
 
 **block element, inline element**
