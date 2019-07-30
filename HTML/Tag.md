@@ -11,7 +11,6 @@
 - [링크](#링크) : `<a>`
 - [이미지](#이미지) : `<img>`
 - [테이블](#테이블) : `<table>, <thead>, <tbody>, <tr>, <th>, <td>`
-- JavaScript 삽입 : `<script`>
 
 **block element, inline element**
 
@@ -38,18 +37,30 @@
    - HTML5의 인라인 요소 종류
      > a, abbr, acronym, b, bdo, big, br, button, cite, code, dfn, em, i, img, input, kbd, label, map, object, q, samp, small, script, select, span, strong, sub, sup, textarea, tt, var
 
+**JavaScript 삽입**
+
+- `<body>` 태그 안에 `<script>` 태그 삽입
+  - 원래는 외부 파일의 참조를 한 곳에 관리하기 위해 페이지의 <head> 태그 안에 쓰는 것이 일반적이었으나, 근래에는 페이지 렌더링의 지연을 막기 위해 <body> 태그 안에 쓴다.
+- 다른 태그의 속성값으로 삽입 `<input type="button" value="event" onclick="alert('hi')">`
+
+**CSS 삽입**
+
+- `<head>` 태그 안에 `<style>` 태그 삽입
+- 다른 태그의 style 속성값으로 삽입 `<body style="background-color:black;color:white">`
+
 <hr>
 
 ### 레이아웃
+
 - `<div>` : 레이아웃을 나누는데 쓰이며 특별한 기능은 없음, 주로 CSS와 연동하여 사용, 블록 요소
 - `<span>` : `<div>` 태그처럼 레이아웃을 나누는데 쓰임, 주로 CSS와 연동하여 사용, 인라인 요소
-**<div>는 줄바꿈이 되지만 <span>은 줄바꿈이 되지 않는다.**
-
+  **<div>는 줄바꿈이 되지만 <span>은 줄바꿈이 되지 않는다.**
 
 ```
 <div style="background-color : cyan">content1</div>
 <div style-"width:100px; height:100px; background-color:#Cf0">content2</div>
 ```
+
 <div style="background-color : #FFDECB">content1</div>
 <div style="width:100px; height:50px; background-color:#D4CCFF">content2</div>
 
@@ -58,6 +69,7 @@
 <span style="background-color:blue">span2</span>
 <span style="background-color:green">span3</span>
 ```
+
 <span style="background-color:red">span1</span>
 <span style="background-color:blue">span2</span>
 <span style="background-color:green">span3</span>
@@ -221,6 +233,7 @@
 - [Khan Academy](https://ko.khanacademy.org/computing/computer-programming/html-css#intro-to-html)
 - [HTML5 태그의 블록 요소와 인라인 요소](https://junistory.blogspot.com/2017/07/html5.html)
 - [ofcourse - font 속성](https://ofcourse.kr/css-course/font-%EC%86%8D%EC%84%B1)
+- [HTML 속의 자바스크립트](https://nolboo.kim/blog/2014/03/27/javascript-for-web-developer-2/)
 
 ### Learn More
 
