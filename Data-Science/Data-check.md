@@ -33,20 +33,6 @@
   - If 'coerce', then invalid parsing will be set as NaN
   - If 'ignore', then invalid parsing will return the input
 
-### `[pd.to_datetime]` datetime으로 data type 변경
-
-> df['date'] = pd.to_datetime(df['date'])
-
 ### apply
 
 - df[col].apply()에 적용된 function에서 어떤 값도 return 받지 못한 value는 모두 nan 데이터가 되므로 유의 필요
-
-### 시계열 데이터에 따른 요약 통계
-
-- 시계열 데이터 열을 index로 설정
-
-  > df.set_index('date')
-
--
-
-> df.resampling(rule='A') # 연마다의 통계
