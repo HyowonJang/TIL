@@ -11,7 +11,7 @@
 
 ## Data Science
 
-- [DataFrame check](Data-Science/DataFrame-check.md)
+- [Data check](Data-Science/Data-check.md)
 
 ## Python
 
