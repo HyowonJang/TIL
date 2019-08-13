@@ -13,6 +13,9 @@ sudo npm install -g create-react-app
 # .는 현재 디랙토리 의미
 # 해당 디렉토리에 create-react-app을 통해 개발환경 구축
 create-react-app .
+
+npm run start
+# npm start와 같음
 ```
 
 - npx : npm을 설치하면 함께 설치됨
