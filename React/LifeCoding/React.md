@@ -2,37 +2,55 @@
 
 - npm : node.js로 만들어진 앱을 쉽게 설치할 수 있는 도구
 
-```
-$ npm install -g create-react-app
-# -g는 global을 의미
+    ```
+    $ npm install -g create-react-app
+    # -g는 global을 의미
 
-$ sudo npm install -g create-react-app
-# permission denied 발생 시
+    $ sudo npm install -g create-react-app
+    # permission denied 발생 시
 
-$ create-react-app .
-# 원하는 디렉토리에서 create-react-app 실행
-# .는 현재 디랙토리 의미
-# 해당 디렉토리에 create-react-app을 통해 개발환경 구축
+    $ create-react-app .
+    # 원하는 디렉토리에서 create-react-app 실행
+    # .는 현재 디랙토리 의미
+    # 해당 디렉토리에 create-react-app을 통해 개발환경 구축
 
-$ npm run start
-# 개발환경 실행
-# npm start와 같음
+    $ npm run start
+    # 개발환경 실행
+    # npm start와 같음
 
-$ npm run build
-# production(실서비스)) 환경에서 사용되는 앱 제작 및 실행
-# 공백 등 불필요한 정보 삭제하여 용량 감축
-```
+    $ npm run build
+    # production(실서비스)) 환경에서 사용되는 앱 제작 및 실행
+    # 공백 등 불필요한 정보 삭제하여 용량 감축
+    ```
 
 - npx : npm을 설치하면 함께 설치됨
 
-```
-$ npx create-react-app my-app
-# -> craeate-react-app을 일회용으로 다운받은 후 실행하고 삭제함
+    ```
+    $ npx create-react-app my-app
+    # -> craeate-react-app을 일회용으로 다운받은 후 실행하고 삭제함
 
-$ cd my-app
+    $ cd my-app
 
-$ npm start
-```
+    $ npm start
+    ```
+
+- `npm install` vs `npm ci`
+    > npm install은 디펜던시 목록을 만들기 위해 package.json 파일을 읽고, 이 디펜던시들의 어떤 버전을 설치해야 하는지 알기 위해 package-lock.json 파일을 이용한다. 만약 디펜던시 정보가 package-lock.json에 없다면 npm install에 의해 추가된다.
+    >
+    > npm ci (Continuous Integration, 지속통합)은 package-lock.json 파일을 참고하여 바로 디펜던시들을 설치하고, 잘못 매칭된 버전이 없는지를 검증하기 위해서만 package.json 파일을 이용한다. 만약 디펜던시가 누락되었거나 서로 버전이 충돌한다면 에러를 발생시킨다.
+    >
+    > 새로운 디펜던시들을 추가하고 프로젝트의 디펜던시를 업데이트 하고자 한다면 npm install을 사용해야 한다. 보통은 개발 중 디펜던시 목록을 업데이트 하는 변경사항을 적용한 뒤 사용하지만, 이런 경우에는 npm ci를 사용하는 것이 더 좋다.
+    >
+    > 이미 결정되어있고 반복 가능한 빌드가 필요하다면 npm ci를 사용해야 한다. 예를 들면 지속적인 통합시나 자동화 된 작업 등, 그리고 디펜던시들을 처음으로 설치하는 경우에는  npm install 대신에 npm ci를 사용해야 한다.
+
+    - `npm ci`
+        - Requires at least npm v5.7.1.
+        - Requires package-lock.json or npm-shrinkwrap.json to be present.
+        - Throws an error if dependencies from these two files don't match package.json.
+        - Removes node_modules and install all dependencies at once.
+        - It never writes to package.json or package-lock.json.
+
+    [What is the difference between “npm install” and “npm ci”?](https://stackoverflow.com/questions/52499617/what-is-the-difference-between-npm-install-and-npm-ci)
 
 - index.html
 
@@ -82,3 +100,4 @@ $ npm start
 - React Developer Tools(확장프로그램)
 
   - 개발자도구 > Elements에서는 모든 컴포넌트들이 html로 컴파일되어 렌더링된 결과만 보여주기 때문에, React 컴포넌트들로 짜여진대로를 보여주는 프로그램
+
