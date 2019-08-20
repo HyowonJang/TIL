@@ -15,7 +15,7 @@
 
 ## Python
 
-- [print](Python/print.md)
+- [Basic](Python/Basic.md)
 
 ## HTML
 

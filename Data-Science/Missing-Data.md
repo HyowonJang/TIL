@@ -86,6 +86,18 @@ plt.show()
 - `fillna` : 결측치 채우기
 
   ```
+  # 간단하게 값으로 채우기
+  df.fillna(0)
+
+  # 앞 혹은 뒤에 있는 값으로 채우기
+  df.fillna(method='ffill')
+  df.fillna(method='bfill')
+
+  # 지정된 값으로 채우기
+  values = {'A': 0, 'B': 1, 'C': 2, 'D': 3}
+  df.fillna(value=values)
+
+  # 함수 적용하여 채우기
   df_copy2 = df.copy()
   df_copy2['tmax'] = df.tmax.groupy(df.store_nbr).transform(lambda x : x.fillna(x.mean()))
   # ! lambda 함수에서 x는 column
