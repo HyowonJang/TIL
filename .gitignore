@@ -1,9 +1,19 @@
-Math/asset/
+*/asset/
 
-Math/.ipynb_checkpoints
+*/.ipynb_checkpoints
 
-Data-Science/asset/
+*/*/.ipynb_checkpoints
 
-.DS_Store
+*/asset/
 
-¹«Á¦.code-workspace
+*/*/asset/
+
+*/image/
+
+*/*/image/
+
+.DS_store
+
+*/.DS_store
+
+*/*/.DS_store

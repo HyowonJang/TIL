@@ -94,6 +94,7 @@ plt.show()
   df.fillna(method='bfill')
 
   # 지정된 값으로 채우기
+  # key값은 column 이름
   values = {'A': 0, 'B': 1, 'C': 2, 'D': 3}
   df.fillna(value=values)
 
@@ -105,5 +106,6 @@ plt.show()
 
 ### Reference
 
-- (3.1 누락 데이터 처리)[https://datascienceschool.net/view-notebook/8cbbdd4daaf84c0492d440b9a819c8be/]
-- (Python numpy.reshape(-1)의 의미)[https://sailing-sj66.tistory.com/15]
+- [pandas.DataFrame.fillna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html)
+- [3.1 누락 데이터 처리](https://datascienceschool.net/view-notebook/8cbbdd4daaf84c0492d440b9a819c8be/)
+- [Python numpy.reshape(-1)의 의미](https://sailing-sj66.tistory.com/15)
