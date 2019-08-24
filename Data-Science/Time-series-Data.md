@@ -100,6 +100,13 @@
      df.resample('30s').bfill()
      ```
 
+- 날짜 데이터로부터 week number 데이터 생성
+
+```
+import datetime as dt
+df['date'] = df['date'].dt.week
+```
+
 ### Reference
 
 - (시계열 자료 다루기)[https://datascienceschool.net/view-notebook/8959673a97214e8fafdb159f254185e9/]

@@ -2,6 +2,11 @@
 
 ### pivot_table
 
+- pivot vs pivot_table
+
+  - pivot : 지정한 index와 지정한 columns에 해당하는 value값을 '그대로 넣어' df 생성
+  - pivot_table : 지정한 index와 지정한 columns에 해당하는 value값을 '지정한 aggfunc에 맞춰 연산하여' df 생성
+
 - column마다 다른 aggfunc 적용 및 한 column에 여러 aggfunc 적용
 
 ```
@@ -15,6 +20,15 @@ tmp = df.pivot_table(index='ORDCUSTNO', values=['AGE', 'AMT'],
 ![MultiIndex](image/MultiIndex.png)
 
 - aggfunc에 unique count 적용 : `aggfunc=lambda x: len(x.unique())`, x는 index별 해당 values
+
+```
+df_tmp = df.pivot_table(index=['ORDCUSTNO'], values=['Pur_Week', 'AMT'],
+               aggfunc={'Pur_Week':lambda x: len(x.unique()),
+                        'AMT':'sum'})
+df_tmp
+# pivot_table 생성 시 index별 데이터 기준으로 연산하기 때문에
+# lambda 함수에서의 x는 각 'ORDCUSTNO'에 해당하는 'Pur_Week'열의 데이터이다
+```
 
 ### MultiIndex
 
@@ -87,6 +101,16 @@ tmp['AGE']['max']
     df.at[4, 'B'] = 10
 
     df.at[4, 'B'] # return : 10
+
+    # 사용예시 : 'CAT_A'의 Nan 데이터에 값 삽입
+
+    for i in ls_tmp:
+    # 'CAT_A'가 null이고 해당 NAME을 가진 df의 index 추출
+    ls_idx = df[(df['CAT_A'].isnull())&(df['NAME'] == i)].index.tolist()
+
+        for ii in ls_idx:
+            # 추출해낸 index를 for문으로 구성하여 df.at으로 값 삽입
+            df.at[ii, 'CAT_A'] = 'apple'
     ```
 
 ### Reference
