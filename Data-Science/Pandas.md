@@ -113,6 +113,21 @@ tmp['AGE']['max']
             df.at[ii, 'CAT_A'] = 'apple'
     ```
 
+### `df.rename`
+
+- column 이름을 바꾸는 경우 : `df.rename(columns={'기존 col 이름': '변경할 col 이름'})`
+
+```
+df = pd.DataFrame({"A":[1, 2, 3], "B":[4, 5, 6]})
+df.rename(columns={"A":"a", "B":"c"})
+```
+
+- index 이름을 바꾸는 경우 : `df.rename(index={'기존 idx 이름': '변경할 idx 이름'})`
+
+```
+df.rename(index={0:"x", 1:"y", 2:"z"})
+```
+
 ### Reference
 
 - [pandas.DataFrame.mask](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mask.html#pandas.DataFrame.mask)

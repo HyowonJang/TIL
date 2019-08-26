@@ -27,9 +27,14 @@ pd.DataFrame(tmp, dtype=np.int64)
 
 ### 스케일링
 
+- scale(스케일링) vs standardization(표준화) vs normalization(정규화)
+
+  - normalization(정규화) : 5개 영화에 대해 0~5의 범주에서 평가된 A 데이터와 0~10의 범주에서 평가된 B 데이터가 있다면 두 개의 데이터를 정규화하여(A 데이터 / 5, B 데이터 / 10) 동일 선상에서 사용할 수 있음
+  - scale 데이터는 scale parameter을 알고있으면 다시 원래대로 되돌릴 수 있지만, normalization한 데이터는 원래 크기를 알아야지만 되돌릴 수 있음
+
 - sklearn 패키지 사용
 
-  - `StandardScler(X)` : 평균이 0과 표준편차가 1이 되도록 변환
+  - `StandardScaler(X)` : 평균이 0과 표준편차가 1이 되도록 변환
   - `RobustScaler(X)` : 중앙값이 0, IQR(interquartile range, 사분범위)이 1이 되도록 변환
     - IQR(사분범위) : 제3사분위수(75% 백분점수)에서 제1사분위수(25% 백분점수)를 뺀 값
       - 백분점수는 해당 백분위에 해당하는 value
@@ -40,6 +45,22 @@ pd.DataFrame(tmp, dtype=np.int64)
     ![scaling](image/Scaling.png)
 
 ```
+# df의 column 단위를 대상으로 한다면 scale 하기 전 reshape 필요
+ary = df['col'].values
+ary = ary.reshape(1-, 1)
+X = ary
+
+# StandardScaler
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+scaler.fit(X)
+X_sclaed = scaler.transform(X)
+
+# RobustScaler
+robust_scaler = RobustScaler()
+robust_scaler.fit(X)
+X_robust_scaled = robust_scaler.transform(X)
 
 ```
 
