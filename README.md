@@ -2,6 +2,8 @@
 
 > **Today I Learned**
 
+<hr>
+
 ## Categories
 
 - [Data Science](#Data-Science)
@@ -11,6 +13,8 @@
 - [JavaScript](#JavaScript)
 - [React](#React)
 
+<hr>
+
 ### Data Science
 
 - [Data check](Data-Science/Data-check.md)
@@ -19,7 +23,7 @@
 - [Time series Data](Data-Science/Time-series-Data.md)
 - [Numpy](Data-Science/Numpy.md)
 - [Pandas](Data-Science/Pandas.md)
-- [Visualization](Data-Sceince/Visualization.md)
+- [Visualization](Data-Science/Visualization.md)
 
 ### Python
 

@@ -109,4 +109,4 @@ df['date'] = df['date'].dt.week
 
 ### Reference
 
-- (시계열 자료 다루기)[https://datascienceschool.net/view-notebook/8959673a97214e8fafdb159f254185e9/]
+- [시계열 자료 다루기](https://datascienceschool.net/view-notebook/8959673a97214e8fafdb159f254185e9/)

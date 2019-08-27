@@ -10,19 +10,17 @@
 - column마다 다른 aggfunc 적용 및 한 column에 여러 aggfunc 적용
 
 ```
-tmp = df.pivot_table(index='ORDCUSTNO', values=['AGE', 'AMT'],
+tmp = df.pivot_table(index='CUSTNO', values=['AGE', 'AMT'],
                aggfunc={
                    'AGE':['max','min'],
                    'AMT':'sum',
                        })
 ```
 
-![MultiIndex](image/MultiIndex.png)
-
 - aggfunc에 unique count 적용 : `aggfunc=lambda x: len(x.unique())`, x는 index별 해당 values
 
 ```
-df_tmp = df.pivot_table(index=['ORDCUSTNO'], values=['Pur_Week', 'AMT'],
+df_tmp = df.pivot_table(index=['CUSTNO'], values=['Pur_Week', 'AMT'],
                aggfunc={'Pur_Week':lambda x: len(x.unique()),
                         'AMT':'sum'})
 df_tmp
