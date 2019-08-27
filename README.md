@@ -11,7 +11,7 @@
 - [JavaScript](#JavaScript)
 - [React](#React)
 
-## Data Science
+### Data Science
 
 - [Data check](Data-Science/Data-check.md)
 - [Missing Data](Data-Science/Missing-Data.md)
@@ -21,23 +21,23 @@
 - [Pandas](Data-Science/Pandas.md)
 - [Visualization](Data-Sceince/Visualization.md)
 
-## Python
+### Python
 
 - [Basic](Python/Basic.md)
 
-## HTML
+### HTML
 
 - [Tag](HTML/Tag.md)
 
-## CSS
+### CSS
 
 - [CSS Selector](CSS/CSS-selector.md)
 - [CSS Properties](CSS/CSS-properties.md)
 
-## JavaScript
+### JavaScript
 
 - [JavaScript](JavaScript/JavaScript.md)
 
-## React
+### React
 
 - [React](React/LifeCoding/React.md)
