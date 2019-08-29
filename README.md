@@ -6,12 +6,12 @@
 
 ## Categories
 
-- [Data Science](#Data-Science)
-- [Python](#Python)
-- [HTML](#HTML)
-- [CSS](#CSS)
-- [JavaScript](#JavaScript)
-- [React](#React)
+- **[Data Science](#Data-Science)**
+- **[Python](#Python)**
+- **[HTML](#HTML)**
+- **[CSS](#CSS)**
+- **[JavaScript](#JavaScript)**
+- **[React](#React)**
 
 <hr>
 
