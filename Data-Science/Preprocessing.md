@@ -1,6 +1,6 @@
 ## preprocessing
 
-### one hot encoding
+### one-hot-encoding
 
 - sklearn 패키지 사용
 
@@ -11,7 +11,7 @@ from sklearn import preprocessing
 label_encoder = preprocessing.LabelEncoder()
 onehot_encoder = preprocessing.OneHotEncoder()
 
-# one hot encoding의 input으로는 숫자형만 올 수 있기 때문에 label encoding을 통해 문자형 변수를 숫자형 변수로 변경
+# one-hot-encoding의 input으로는 숫자형만 올 수 있기 때문에 label encoding을 통해 문자형 변수를 숫자형 변수로 변경
 col2 = label_encoder.fit_transform(df['col'])
 col2 = col2.reshape(len(col2), 1)
 
@@ -24,6 +24,27 @@ tmp = col2.toarray()
 # pd.DataFrame을 이용해 dataframe으로 만든 뒤 기존 df에 concat, 단 두 df의 index가 일치해야함
 pd.DataFrame(tmp, dtype=np.int64)
 ```
+
+### dummy variable(더미변수)
+
+- 0 또는 1만으로 표현되는 값으로 어떤 특징이 존재하는가, 존재하지 않는가를 표시하는 독립변수
+- 범주형 변수를 더미변수로 인코딩
+  - patsy 패키지의 `dmatrix`
+  - `OLS` 클래스의 `from_formula` 메서드
+- 풀랭크 방식, 축소랭크 방식
+  - 풀랭크 방식 : 더미변수의 값을 one-hot-encoding 방식으로 지정
+    > x = A or B<br>
+    > x1 = A -> d1A = 1, d1B = 0<br>
+    > x1 = B -> d1A = 0, d1B = 1
+  - 축소랭크 방식 : 특정한 하나의 범주값을 기준값(reference, baseline)으로 하고 기준값에 대응하는 더미변수의 가중치는 항상 1로 설정, 다른 범주형 값을 가지는 경우에는 기준값에 추가적인 특성이 있는 것으로 간주
+    > x = A or B<br>
+    > A가 기준값인 경우<br>
+    > x1 = A -> d1A = 1, d1B = 0<br>
+    > x1 = B -> d1A = 1, d1B = 1<br>
+    >
+    > B가 기준값인 경우<br>
+    > x1 = A -> d1A = 1, d1B = 1<br>
+    > x1 = B -> d1A = 0, d1B = 1
 
 ### 스케일링
 
@@ -70,3 +91,4 @@ X_robust_scaled = robust_scaler.transform(X)
 - [scikit-learn의 전처리 기능](https://datascienceschool.net/view-notebook/f43be7d6515b48c0beb909826993c856/)
 - [Feature Scaling in Python](https://medium.com/@ian.dzindo01/feature-scaling-in-python-a59cc72147c1)
 - [[Python] 어떤 스케일러를 쓸 것인가?](https://mkjjo.github.io/python/2019/01/10/scaler.html)
+- [3.5 범주형 독립변수](https://datascienceschool.net/view-notebook/7dda1bc9ad1c435fb309ea88f672eff9/)

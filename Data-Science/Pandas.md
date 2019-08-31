@@ -28,6 +28,14 @@ df_tmp
 # lambda 함수에서의 x는 각 'ORDCUSTNO'에 해당하는 'Pur_Week'열의 데이터이다
 ```
 
+### sort_values
+
+- 지정한 열을 기준으로 value들을 정렬
+
+```
+df.sort_values(by='col1', ascending=False)
+```
+
 ### MultiIndex
 
 - 리스트 안의 리스트에 접근하는 것과 동일한 slicing 방식으로 column에 접근
@@ -43,26 +51,14 @@ tmp['AGE']['max']
 ### Week number
 
 - 날짜 데이터에 해당하는 week number 반환
+
   - `pd.to_datetime`을 통해 column을 datetime 자료형으로 바꾼 뒤 datetime.week 사용
+
   ```
+  df['Pur_Date'] = pd.to_datetime(df['Pur_Date'], format='%Y%m%d')
+
   import datetime as dt
-  df['Pur_Week'] = df['Pur_Date_'].dt.week
-  ```
-
-### `df.where`
-
-- 조건에 맞지 않는 값을 변경, 대체값을 지정하지 않으면 Nan값 return
-
-  - `df.where(유지할 value의 조건, 변경할 value에 주입할 값)`
-
-  ```
-  s = pd.Series(range(5))
-
-  s.where(s > 1)
-  # 1 이하의 값만 남기고 나머지는 Nan값으로 대체
-
-  s.where(s > 1, 10)
-  # 1 이하의 값들은 10으로 대체
+  df['Pur_Week'] = df['Pur_Date'].dt.week
   ```
 
 ### `df.mask`
@@ -70,6 +66,7 @@ tmp['AGE']['max']
 - 조건에 맞는 값을 변경, 대체 값을 지정하지 않으면 Nan값 return
 
   - `df.mask(변경할 value의 조건, 변경할 value에 주입할 값)`
+  - 여러개의 조건은 적용하기 어려운 것으로 보임
 
   ```
   s = pd.Series(range(5))
