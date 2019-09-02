@@ -61,6 +61,37 @@ tmp['AGE']['max']
   df['Pur_Week'] = df['Pur_Date'].dt.week
   ```
 
+### pandas.Series.isin
+
+- set 혹은 list-like 값들이 Series 안에 포함되어있는지 체크
+
+```
+s = pd.Series(['lama', 'cow', 'lama', 'beetle', 'lama', 'hippo'], name='animal')
+s.isin(['cow', 'lama'])
+# 0     True
+# 1     True
+# 2     True
+# 3    False
+# 4     True
+# 5    False
+```
+
+### `df.where`
+
+- 조건에 맞지 않는 값을 변경, 대체값을 지정하지 않으면 Nan값 return
+
+  - `df.where(유지할 value의 조건, 변경할 value에 주입할 값)`
+
+  ```
+  s = pd.Series(range(5))
+
+  s.where(s > 1)
+  # 1 이하의 값만 남기고 나머지는 Nan값으로 대체
+
+  s.where(s > 1, 10)
+  # 1 이하의 값들은 10으로 대체
+  ```
+
 ### `df.mask`
 
 - 조건에 맞는 값을 변경, 대체 값을 지정하지 않으면 Nan값 return
