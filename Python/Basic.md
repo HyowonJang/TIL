@@ -34,6 +34,13 @@ fruits = ['apple', 'banana', 'mango']
 ls = [(p,f) for p in properties for f in fruits]
 ```
 
+### 같은 길이인 두 개의 리스트를 동시에 반복
+
+```
+for f, b in zip(foo, bar):
+    print(f, b)
+```
+
 ### 리스트 원소로 모든 조합 생성
 
 - python 기본 라이브러리인 `itertools` 사용
