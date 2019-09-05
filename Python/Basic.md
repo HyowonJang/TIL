@@ -3,7 +3,7 @@
 - Python의 print 함수의 end 파라미터에는 다음을 사용할 수 있다.
 
   - `\n` : 다음 줄로 이동(개행)
-  - `\r` :해당 줄의 처음으로 이동
+  - `\r` : 해당 줄의 처음으로 이동
   - `\t` : 8칸 공백
   - `\'` : '문자
   - `\"` : "문자
@@ -34,7 +34,9 @@ fruits = ['apple', 'banana', 'mango']
 ls = [(p,f) for p in properties for f in fruits]
 ```
 
-### 같은 길이인 두 개의 리스트를 동시에 반복
+### zip
+
+- `zip(*iterable)` : 동일한 개수로 이루어진 자료형을 묶어주는 함수
 
 ```
 for f, b in zip(foo, bar):
