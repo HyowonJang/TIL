@@ -109,6 +109,20 @@ for f, b in zip(foo, bar):
   sorted_x = sorted(x.items(), key=operator.itemgetter(0))
   ```
 
+### 리스트의 교집합
+
+- 1차원 리스트의 교집합을 구하는 경우
+
+```
+list(set(ls_1).intersection(ls_2))
+```
+
+- 2차원 리스트의 교집합을 구하는 경우
+
+```
+[list(set(ls_1).intersection(i)) for i in ls_2]
+```
+
 ### Reference
 
 - [파이썬 리스트 모든 조합 구하기](https://ourcstory.tistory.com/414)

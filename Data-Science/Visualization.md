@@ -62,3 +62,9 @@ sns.heatmap(X.corr(), annot=True, cmap=cmap)
 # annot : 상관관계 수치 표시
 plt.show()
 ```
+
+- `plt.subplot`
+
+```
+plt.subplot(그래프 그리드 행의 길이, 그래프 그리드 열의 길이, 그래프의 위치 순서)
+```
