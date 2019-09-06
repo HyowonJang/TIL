@@ -123,6 +123,19 @@ list(set(ls_1).intersection(ls_2))
 [list(set(ls_1).intersection(i)) for i in ls_2]
 ```
 
+### for문의 반복 요소와 변수
+
+```
+for idx, i in enumerate(ls_one):
+    for word in list(dict_words.keys()):
+        if word in i:
+            # for문의 i와 새로 값을 할당한 i는 다름
+            # 자동으로 리스트의 값이 변경되지 않음
+            i = i.replace(word, dict_words[word])
+            # 리스트의 새로운 요소로 삽입해야 함
+            ls_one[idx] = i
+```
+
 ### Reference
 
 - [파이썬 리스트 모든 조합 구하기](https://ourcstory.tistory.com/414)
