@@ -1,5 +1,19 @@
 ## Pandas
 
+### 모든 데이터 확인하기
+
+- 현재의 세팅 확인 후 변경하기 (columns도 rows와 동일하게 세팅 가능)
+
+```
+# 방법 1
+pd.options.display.max_rows
+pd.options.display.max_rows = 999
+
+# 방법 2
+pd.get_option("display.max_rows")
+pd.set_option('display.max_rows', 999)
+```
+
 ### pivot_table
 
 - pivot vs pivot_table

@@ -136,6 +136,27 @@ for idx, i in enumerate(ls_one):
             ls_one[idx] = i
 ```
 
+### 리스트에서 찾고자 하는 값의 모든 index 추출하기
+
+- 리스트 안에 해당 값이 1개만 있는 경우
+
+```
+# 찾고자 하는 값 : 1
+ls = [1,6,8,9,1,2,3]
+ls.index(1)
+# return : 0 -> 찾고자 하는 값이 있는 첫번째 index만 반환한다
+```
+
+- 리스트 안에 해당 값이 여러개 있는 경우
+
+```
+# 찾고자 하는 값 : 1
+ls = [1,6,8,9,1,2,3]
+value = 1
+[idx for idx, x in enumerate(ls) if x == value]
+# return : [0, 4] -> 찾고자 하는 값이 있는 모든 index를 반환한다
+```
+
 ### Reference
 
 - [파이썬 리스트 모든 조합 구하기](https://ourcstory.tistory.com/414)
