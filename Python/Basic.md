@@ -34,6 +34,17 @@ fruits = ['apple', 'banana', 'mango']
 ls = [(p,f) for p in properties for f in fruits]
 ```
 
+- 연속된 for문
+
+```
+# 바깥쪽의 리스트가 list comprehension에서 더 왼쪽에 위치한다
+[x + y for x in ls_1 for y in ls_2 ]
+
+for x in ls_1:
+    for y in ls_2:
+       x + y
+```
+
 ### zip
 
 - `zip(*iterable)` : 동일한 개수로 이루어진 자료형을 묶어주는 함수
