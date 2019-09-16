@@ -90,6 +90,13 @@ s.isin(['cow', 'lama'])
 # 5    False
 ```
 
+- set 혹은 list-like 값에 일치하는 values만 추출
+
+```
+ls = ['value1', 'value2']
+df_a = df[df[col].isin(ls)]
+```
+
 ### `df.where`
 
 - 조건에 맞지 않는 값을 변경, 대체값을 지정하지 않으면 Nan값 return
