@@ -1,5 +1,18 @@
 ### seaborn
 
+- `sns.distplot`
+
+  - 1차원 실수 분포 플롯
+  - `plt.hist` + `sns.kdeplot` + `sns.rugplot`
+
+  ```
+  x = iris.petal_length.values
+
+  sns.distplot(x, kde=True, rug=True)
+  plt.title("Iris 데이터 중, 꽃잎의 길이에 대한 Dist Plot")
+  plt.show()
+  ```
+
 - `sns.countplot`
 
   - 값 1개씩(1차원)을 가지는 데이터들이 x축에 표현되고, x축의 해당 위치에 모여있는 데이터의 개수들을 y축에 표현한다
