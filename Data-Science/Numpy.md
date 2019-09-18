@@ -12,3 +12,15 @@ np.array(ls)[[1, 2, 3, 4, 5]]
 ls_idx = [1, 2, 3, 4, 5]
 np.array(ls)[ls_idx]
 ```
+
+### 기술통계
+
+- 평균 : np.mean(x)
+- 분산 : np.var(x)
+- 표준 편차 : np.std(x)
+- 최대값 : np.max(x)
+- 최소값 : np.min(x)
+- 중앙값 : np.median(x)
+- 1사분위 수 : np.percentile(x, 25)
+- 2사분위 수 : np.percentile(x, 50)
+- 3사분위 수 : np.percentile(x, 75)

@@ -104,6 +104,16 @@ plt.show()
   # ! lambda 함수에서 x는 column
   ```
 
+1. 선형으로 대체 `pandas.Series.interpolate`
+
+```
+# Series 안의 nan값을 선형으로 채움(method의 default값은 'linear')
+s = pd.Series([0, 1, np.nan, 3])
+s.interpolate()
+```
+
+- 더 많은 용례는 [Documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.interpolate.html) 참고
+
 ### Reference
 
 - [pandas.DataFrame.fillna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html)

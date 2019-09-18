@@ -85,6 +85,16 @@ X_robust_scaled = robust_scaler.transform(X)
 
 ```
 
+### 중복행 삭제
+
+- keep 인수는 'first' 혹은 'last'로 설정
+- 중복을 체크하는 기준열을 지정하려면 'subset' 인수에 열을 리스트로 설정
+
+```
+# 처음 행을 남기고 뒤에 나오는 중복행을 삭제
+df.drop_duplicates(keep='first', inplace=True)
+```
+
 ### Reference
 
 - [Python - sklearn LabelEncoder, OnehotEncoder 사용](https://3months.tistory.com/207)

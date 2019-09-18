@@ -107,6 +107,14 @@ import datetime as dt
 df['date'] = df['date'].dt.week
 ```
 
+- 시계열 그래프 그리기
+
+```
+plt.figure(figsize=(15,6))
+train_[col].plot(title=col)
+plt.show()
+```
+
 ### Reference
 
 - [시계열 자료 다루기](https://datascienceschool.net/view-notebook/8959673a97214e8fafdb159f254185e9/)
