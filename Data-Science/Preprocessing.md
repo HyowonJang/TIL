@@ -95,6 +95,26 @@ X_robust_scaled = robust_scaler.transform(X)
 df.drop_duplicates(keep='first', inplace=True)
 ```
 
+### sklearn CountVectorizer
+
+1. 문자열을 요소로 포함하는 리스트를 넣어 fit하면 출현한 단어들을 추출하여 고유의 번호를 부여한 vocabulary\_를 생성
+   (고유의 번호는 벡터에 표현되는 단어의 위치가 됨)
+2. vocabulary\_를 기반으로 리스트의 요소들(문자열)을 훑으면서 해당 요소에 출현하는 단어의 숫자를 세어 벡터를 생성
+
+```
+from sklearn.feature_extraction.text import CountVectorizer
+
+# 벡터의 열이 될 corpus안의 모든 단어 추출 후 voca 생성
+count = CountVectorizer()
+count.fit(corpus)
+
+# voca 확인
+count.vocabulary_
+
+# 벡터 생성
+vect.transform(['This is the second document.']).toarray()
+```
+
 ### Reference
 
 - [Python - sklearn LabelEncoder, OnehotEncoder 사용](https://3months.tistory.com/207)
