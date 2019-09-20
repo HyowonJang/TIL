@@ -97,6 +97,13 @@ ls = ['value1', 'value2']
 df_a = df[df[col].isin(ls)]
 ```
 
+- set 혹은 list-like 값에 일치하지 않는 values만 추출, 조건 앞에 `~`를 붙여준다
+
+```
+ls = ['value1', 'value2']
+df_a = df[~df[col].isin(ls)]
+```
+
 ### `df.where`
 
 - 조건에 맞지 않는 값을 변경, 대체값을 지정하지 않으면 Nan값 return
