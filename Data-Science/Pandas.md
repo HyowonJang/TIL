@@ -167,6 +167,13 @@ df_a = df[~df[col].isin(ls)]
             df.at[ii, 'CAT_A'] = 'apple'
     ```
 
+### df의 열에 포함되어 있는 value 카운트하기
+
+```
+from collections import Counter
+Counter(train.Summary)
+```
+
 ### `df.rename`
 
 - column 이름을 바꾸는 경우 : `df.rename(columns={'기존 col 이름': '변경할 col 이름'})`
