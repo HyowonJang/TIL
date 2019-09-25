@@ -189,6 +189,10 @@ df.rename(columns={"A":"a", "B":"c"})
 df.rename(index={0:"x", 1:"y", 2:"z"})
 ```
 
+### `df['target'] & df[['target']]`
+
+- df['target']는 Series를 반환하고 df[['target']]는 DataFrame를 반환
+
 ### Reference
 
 - [pandas.DataFrame.mask](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mask.html#pandas.DataFrame.mask)
