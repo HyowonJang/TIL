@@ -1,0 +1,87 @@
+- 오름차순, 내림차순 정렬하기 : `ORDER BY ... (ASC)`, `ORDER BY ... DESC`
+
+```
+# 오름차순
+SELECT *
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID (ASC)
+
+# 내림차순
+SELECT NAME, DATETIME
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID DESC
+```
+
+- 여러 컬럼 기준으로 정렬하기 : `ORDER BY ... , ...`
+
+```
+# 두 컬럼 모두 역순 정렬
+SELECT ANIMAL_ID, NAME, DATETIME
+FROM ANIMAL_INS
+ORDER BY NAME DESC, DATETIME DESC
+
+# 한 컬럼만 역순 정렬
+SELECT ANIMAL_ID, NAME, DATETIME
+FROM ANIMAL_INS
+ORDER BY NAME, DATETIME DESC
+```
+
+- 특정 컬럼을 기준으로 정해진 순서대로 정렬하기 : `ORDER BY FIELD(컬럼명, 정렬순서1, 정렬순서2, ...)`
+
+```
+SELECT ANIMAL_TYPE, COUNT(ANIMAL_ID)
+FROM ANIMAL_INS
+GROUP BY ANIMAL_TYPE
+ORDER BY FIELD(ANIMAL_TYPE, 'Cat', 'Dog')
+```
+
+- 정렬을 이용하여 상위 n개 혹은 하위 n개의 데이터 선택하기 : `ORDER BY` + `LIMIT`
+
+```
+SELECT NAME
+FROM ANIMAL_INS
+ORDER BY DATETIME
+LIMIT 1
+```
+
+- 최댓값, 최솟값 선택하기 : `MAX`, `MIN`
+
+```
+# 최댓값
+SELECT MAX(DATETIME)
+FROM ANIMAL_INS
+
+# 최솟값
+SELECT MIN(DATETIME)
+FROM ANIMAL_INS
+```
+
+- 갯수 세기, unique 값의 갯수 세기 : `COUNT`, `COUNT(DISTINCT())`
+
+```
+# 갯수 세기
+SELECT COUNT(ANIMAL_ID)
+FROM ANIMAL_INS
+
+# unique 값의 갯수 세기
+SELECT COUNT(DISTINCT(NAME))
+FROM ANIMAL_INS
+```
+
+- 조건 설정하기 : `WHERE`
+
+```
+SELECT ANIMAL_ID, NAME
+FROM ANIMAL_INS
+WHERE INTAKE_CONDITION='SICK'
+ORDER BY ANIMAL_ID
+```
+
+- '같지 않음'의 조건 설정하기 : `!=` 또는 `<>`
+
+```
+SELECT ANIMAL_ID, NAME
+FROM ANIMAL_INS
+WHERE INTAKE_CONDITION != 'Aged'
+ORDER BY ANIMAL_ID
+```
