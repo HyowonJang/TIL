@@ -48,7 +48,7 @@ LIMIT 1
 
 ### Max, Min, Count, Distinct 구하기
 
-- 최댓값, 최솟값 선택하기 : `MAX`, `MIN`
+- 최댓값, 최솟값 선택하기 : `MAX`, `MIN`
 
 ```
 # 최댓값
@@ -111,8 +111,10 @@ ORDER BY NAME
 
 - Group by 설정 및 DATETIME에서 시간 추출하기
 
-  1. HOUR 함수 쓰기 : `HOUR`
-  2. DATE_FORMAT 및 CAST 함수 쓰기 : `DATE_FORMAT`, `CAST`
+  - HOUR 함수 쓰기 : `HOUR`
+  - DATE_FORMAT 및 CAST 함수 쓰기 : `DATE_FORMAT`, `CAST`
+    - https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html
+    - `CAST(컬럼 AS 바꿀타입)`
 
   ```
   # 9시부터 19시까지, 각 시간대별로 입양이 몇 건이나 발생했는지 조회하는 SQL문을 작성해주세요. 이때 결과는 시간대 순으로 정렬해야 합니다.
@@ -132,6 +134,41 @@ ORDER BY NAME
   ORDER BY HOUR
   ```
 
+### 결측값 찾기
+
+- 결측값 찾기 : `IS NULL`, `IS NOT NULL`
+
+```
+# 결측값인 경우 찾기
+SELECT ANIMAL_ID
+FROM ANIMAL_INS
+WHERE NAME IS NULL
+
+# 결측값이 아닌 경우 찾기
+SELECT ANIMAL_ID
+FROM ANIMAL_INS
+WHERE NAME IS NOT NULL
+ORDER BY ANIMAL_ID
+```
+
+- 결측값인 경우 값 설정하기 : `IFNULL(컬럼, 대체할 값)`
+
+```
+# 입양 게시판에 동물 정보를 게시하려 합니다. 동물의 생물 종, 이름, 성별 및 중성화 여부를 아이디 순으로 조회하는 SQL문을 작성해주세요. 이때 프로그래밍을 모르는 사람들은 NULL이라는 기호를 모르기 때문에, 이름이 없는 동물의 이름은 No name으로 표시해 주세요.
+
+SELECT ANIMAL_TYPE, IFNULL(NAME, 'No name'), SEX_UPON_INTAKE
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID
+```
+
+### Etc
+
+- 컬럼명을 새로 지정할 때 `AS`는 생략 가능
+
 ### 데이터 타입
 
 http://www.incodom.kr/DB_-_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%83%80%EC%9E%85/MYSQL
+
+### Referenct
+
+http://tcpschool.com/mysql/mysql_operator_typeCasting
