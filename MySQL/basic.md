@@ -38,12 +38,17 @@ ORDER BY FIELD(ANIMAL_TYPE, 'Cat', 'Dog')
 ```
 
 - 정렬을 이용하여 상위 n개 혹은 하위 n개의 데이터 선택하기 : `ORDER BY` + `LIMIT`
+  - `LIMIT(a, b)`에서 `a`는 시작 index(0부터 시작), `b`는 갯수
 
 ```
 SELECT NAME
 FROM ANIMAL_INS
 ORDER BY DATETIME
 LIMIT 1
+
+# user1 테이블에서 두번째에서 네번째까지의 3개의 데이터 조회
+SELECT *
+FROM user1 LIMIT 1,3
 ```
 
 ### Max, Min, Count, Distinct 구하기
@@ -70,6 +75,19 @@ FROM ANIMAL_INS
 # unique 값의 갯수 세기
 SELECT COUNT(DISTINCT(NAME))
 FROM ANIMAL_INS
+```
+
+### 사잇값 구하기
+
+- 사잇값 구하기 : `BEWEEN ... AND ...`
+  - 시작값, 끝값 포함!
+
+```
+SELECT HOUR(DATETIME) AS HOUR, COUNT(DATETIME) AS COUNT
+FROM ANIMAL_OUTS
+WHERE HOUR(DATETIME) BETWEEN 9 AND 19
+GROUP BY HOUR
+ORDER BY HOUR
 ```
 
 ### 조건 설정하기
@@ -251,6 +269,16 @@ ORDER BY ANIMAL_INS.ANIMAL_ID
 SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE
 FROM ANIMAL_INS
 WHERE NAME IN('Lucy', 'Ella', 'Pickle', 'Rogan', 'Sabrina', 'Mitty')
+
+# name이 peter와 alice 조회
+SELECT *
+FROM user1
+WHERE name="peter" OR name="alice"
+
+# name이 peter와 alice 조회
+SELECT *
+FROM user1
+WHERE name IN ("peter", "alice")
 ```
 
 ### 조건문 `IF`, `CASE\ WHEN 조건 THEN 반환값 ELSE 반환값\ END AS 컬럼값`
@@ -280,6 +308,15 @@ SELECT ANIMAL_ID, NAME,
     END AS SEX_UPON_INTAKE
 FROM ANIMAL_INS
 ORDER BY ANIMAL_ID
+```
+
+### CONCAT
+
+- select한 데이터를 합쳐서 새로운 컬럼으로 보여주기
+
+```
+SELECT email, CONCAT(name, "(", age, ")") AS "name_age"
+FROM user1
 ```
 
 ### Etc
